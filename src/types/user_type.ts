@@ -8,4 +8,6 @@ export interface IUser extends Document {
     password: string;
     phoneNumber: string;
     country: string;
+    role: "user" | "admin";
+    createdAt: Date;
 }

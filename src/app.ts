@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import healthRouter from './routes/health';
 import { notFound, errorHandler } from './middleware/error';
 import authRouter from './routes/auth_route';
+import connectDB from './config/database';
 
 dotenv.config();
 
@@ -16,5 +17,7 @@ app.use('/auth', authRouter);
 
 app.use(notFound);
 app.use(errorHandler);
+
+connectDB();
 
 export default app;
